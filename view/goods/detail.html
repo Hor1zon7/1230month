@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">商品详情</h1>
+        <table class="table">
+
+            <tbody>
+            <tr>
+                <td>商品名称</td>
+                <td>{$data.goods_name}</td>
+            </tr>
+
+            <tr>
+                <td>商品单价</td>
+                <td>{$data.goods_price}</td>
+            </tr>
+
+            <tr>
+                <td>上架时间</td>
+                <td>{$data.create_time}</td>
+            </tr>
+
+            <tr>
+                <td>阅读量</td>
+                <td>{$data.read}</td>
+            </tr>
+
+
+            </tbody>
+        </table>
+        <a href="http://www.month.com/pay?id={$data.id}"><button class="btn btn-primary">立即购买</button></a>
+
+    </div>
+</div>
+</body>
+</html>

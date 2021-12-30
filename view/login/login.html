@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">登录</h1>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">账号</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control username" style="width: 200px">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">密码</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control password" style="width: 200px">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">验证码</label>
+            <div class="col-sm-10">
+                <div>{:captcha_img()}</div>
+                <input type="text" class="form-control code" style="width: 200px">
+            </div>
+        </div>
+        <button class="login">登录</button>
+
+
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $('.login').click(function () {
+        var username = $('.username').val();
+        var password = $('.password').val();
+        var code = $('.code').val();
+        $.ajax({
+            url: "http://www.month.com/dologin",
+            data: {username: username, password: password, code: code},
+            type: "post",
+            success: function (res) {
+                console.log(res);
+                if (res.code!=200) {
+                   alert(res.msg);
+                   return;
+                }else{
+                    alert('登录成功');
+                    location.href='http://www.month.com/'+res.data;
+                }
+            }
+        })
+    })
+</script>

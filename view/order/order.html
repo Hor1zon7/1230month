@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">订单</h1>
+        <table class="table">
+            <tbody>
+            <tr>
+                <td>订单编号</td>
+                <td>{$order.order_sn}</td>
+            </tr>
+
+            <tr>
+                <td>总价</td>
+                <td>{$order.order_price}</td>
+            </tr>
+            <button class="btn brn-primary"></button>
+
+
+            </tbody>
+        </table>
+        <a href="http://www.month.com/payOrder?order_sn={$order.order_sn}"><button class="btn btn-primary pay">立即支付</button></a>
+
+
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $('.pay').click(function (){
+        $(".pay").attr({"disabled":"disabled"});
+        $(".pay").text('结算中...');
+    })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
