@@ -13,7 +13,7 @@ use think\facade\Route;
 Route::get('think', function () {
     return 'hello,ThinkPHP6!';
 });
-
+//wcy添加了路由的注释
 Route::group(function (){
     Route::get('login', 'Login/login');
     Route::post('dologin', 'Login/dologin');
